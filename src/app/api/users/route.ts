@@ -1,6 +1,7 @@
 import dbConnect from '@/database/mongo';
 import userModel from '@/models/users/userModel';
 import {NextResponse} from "next/server";
+import UserModel from "@/models/users/userModel";
 
 export async function POST (request:Request) {
     await dbConnect();
@@ -10,7 +11,7 @@ export async function POST (request:Request) {
         if(user){
             return NextResponse.json({ message: 'User email already exists' });
         }
-        const newUser = new userModel(data);
+        const newUser = new UserModel(data);
         await newUser.save();
         return NextResponse.json(newUser, { status: 201 });
     }
@@ -19,7 +20,7 @@ export async function POST (request:Request) {
     }
 }
 
-export async function GET(request: Request) {
+export async function GET() {
     await dbConnect();
     const users = await userModel.find();
     return NextResponse.json(users);
