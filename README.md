@@ -16,8 +16,9 @@ Key features:
 
   1. Clone the repository
      
-    git clone https://github.com/OnurRozet/nextauth_project.git
+    git clone https://github.com/OnurRozet/NextAuthjs_Project.git
     cd nextauth_project
+
     
   3. Install dependencies:
   
