@@ -33,7 +33,7 @@ const Register = () => {
     const handleSubmit = async () => {
 
         try {
-            const response = await fetch(`${process.env.NEXTAUTH_URL}/api/users`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
