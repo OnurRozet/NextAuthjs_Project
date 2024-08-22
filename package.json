@@ -12,6 +12,7 @@
     "@auth/mongodb-adapter": "^3.4.2",
     "antd": "^5.20.1",
     "axios": "^1.7.4",
+    "dotenv": "^16.4.5",
     "formik": "^2.4.6",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.3",

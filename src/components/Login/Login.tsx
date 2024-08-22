@@ -3,12 +3,16 @@ import React, { useState } from 'react';
 import Input from "@/components/common/Input";
 import { Button } from "antd";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import {signIn, useSession} from "next-auth/react";
 import { useRouter } from "next/navigation";
 import {toast} from "react-toastify";
 
 const Login = () => {
     const router = useRouter();
+    const {data:session} = useSession();
+    if(session){
+        router.replace("/dashboard");
+    }
     const [formValues, setFormValues] = useState({
         email: "",
         password: "",
@@ -58,7 +62,7 @@ const Login = () => {
                             Login
                         </Button>
                         <span>
-                        <Link href="/register" className="hover:cursor-pointer hover:text-blue-400">
+                        <Link href={"/register"} className="hover:cursor-pointer hover:text-blue-400">
                             Don&apos;t have an account yet?
                         </Link>
                     </span>

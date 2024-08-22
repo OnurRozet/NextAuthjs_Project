@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import Input from "@/components/common/Input";
 import { Button } from "antd";
 import Link from "next/link";
-import axios from "axios";
 import {useRouter} from "next/navigation";
-import {toast, ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 
 const Register = () => {
     const [formValues, setFormValues] = useState({
@@ -29,7 +28,7 @@ const Register = () => {
     const handleSubmit = async () => {
 
         try {
-            const response = await fetch('/api/users', {
+            const response = await fetch(`${process.env.NEXTAUTH_URL}/api/users`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
