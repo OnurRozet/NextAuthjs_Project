@@ -20,6 +20,7 @@ const Login = () => {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
+        debugger
         const response = await signIn("credentials", {
             redirect: false,
             email: formValues.email,

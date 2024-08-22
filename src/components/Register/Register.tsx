@@ -33,6 +33,8 @@ const Register = () => {
     const handleSubmit = async () => {
 
         try {
+            debugger
+            console.log(process.env.NEXT_PUBLIC_API_URL);
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users`, {
                 method: 'POST',
                 headers: {
