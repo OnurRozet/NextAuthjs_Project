@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import Image from "next/image";
 import {signOut, useSession} from "next-auth/react";
 import {Button} from "antd";
 import {useRouter} from "next/navigation";

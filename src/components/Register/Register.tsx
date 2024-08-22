@@ -5,6 +5,7 @@ import { Button } from "antd";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
 import {toast} from "react-toastify";
+import {useSession} from "next-auth/react";
 
 const Register = () => {
     const [formValues, setFormValues] = useState({
@@ -16,6 +17,10 @@ const Register = () => {
     });
 
     const router = useRouter();
+    const {data:session} = useSession();
+    if(session){
+        router.replace("/dashboard");
+    }
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
