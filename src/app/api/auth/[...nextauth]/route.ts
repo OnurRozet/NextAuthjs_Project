@@ -1,9 +1,9 @@
 import userModel from "@/models/users/userModel";
 import CredentialsProvider from "next-auth/providers/credentials";
 import dbConnect from "@/database/mongo";
-import NextAuth, {SessionStrategy} from "next-auth";
+import NextAuth, {NextAuthOptions, SessionStrategy} from "next-auth";
 
-export const authOptions= {
+const authOptions : NextAuthOptions= {
     providers: [
         CredentialsProvider({
             name: 'Credentials',
